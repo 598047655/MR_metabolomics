@@ -42,9 +42,11 @@ Adjust file paths and parameters as needed.
 Run the script to generate the circular heatmap.
 
 **Notes**
+
 Customize file paths and parameters within the scripts to fit your data and analysis needs.
 Ensure all necessary libraries are installed before running the scripts.
 Check for any additional dependencies that might be required for specific functionalities in the scripts.
 
 **Contact**
+
 For any questions or issues, please contact the author at [22218425@zju.edu.cn].
