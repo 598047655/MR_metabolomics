@@ -1,28 +1,23 @@
 **README**
 
 **Overview**
-
 This repository contains R scripts and a CSV file for generating various plots and analyses related to metabolite data in cerebrospinal fluid (CSF). The scripts include Mendelian Randomization analyses, forest plots, and circular heatmaps to visualize the results.
 
 **Files**
 
 **CODE.R**
-
 **Description**: This script performs Mendelian Randomization analysis specifically for 338 CSF metabolites. It extracts exposure and outcome data, harmonizes the data, runs the MR analysis, and generates various plots, including scatter plots, funnel plots, forest plots, and leave-one-out plots. It also includes heterogeneity and pleiotropy tests. The analysis for plasma metabolites is similar and hence not repeated here.
 **Usage**: Ensure all necessary libraries are installed and load the required data files. Execute the script to perform the full analysis and generate the results and plots.
 
 **CSF_Forest_Plot_CODE.R**
-
 **Description**: This script generates a forest plot for CSF metabolite data. It uses the forestploter library to create a visual representation of the odds ratios and confidence intervals for various metabolites.
 **Usage**: Load the me.csv data file and run the script to generate and save the forest plot as a PNG file.
 
 **me.csv**
-
 **Description**: This CSV file contains the data required for generating the forest plot in the CSF_Forest_Plot_CODE.R script. It includes information on metabolites, their mean values, and confidence intervals.
 **Usage**: Ensure this file is in the same directory as the CSF_Forest_Plot_CODE.R script or provide the correct path within the script.
 
 **Circular_Heatmap_CODE.R**
-
 **Description**: This script generates a circular heatmap to visualize consistent significance across different Mendelian Randomization methods. The heatmap highlights the metabolites with significant and consistent beta values across various MR methods.
 **Usage**: Load the necessary data and run the script to generate the circular heatmap. Customize the paths and parameters as needed within the script.
 
