@@ -6,6 +6,7 @@ This repository contains R scripts and a CSV file for generating various plots a
 **Files**
 
 **CODE.R**
+
 **Description**: This script performs Mendelian Randomization analysis specifically for 338 CSF metabolites. It extracts exposure and outcome data, harmonizes the data, runs the MR analysis, and generates various plots, including scatter plots, funnel plots, forest plots, and leave-one-out plots. It also includes heterogeneity and pleiotropy tests. The analysis for plasma metabolites is similar and hence not repeated here.
 **Usage**: Ensure all necessary libraries are installed and load the required data files. Execute the script to perform the full analysis and generate the results and plots.
 
