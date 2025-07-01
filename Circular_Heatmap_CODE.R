@@ -96,24 +96,29 @@ circos.clear()
 circos.par(start.degree = 90, gap.degree = 2, gap.after = c(2,25), track.height = 0.1, clock.wise = F, circle.margin = 1.5)
 circos.heatmap.initialize(data, split = split_bac, cluster = F)
 
+colnames(data)[2] <- "IVW P-Value"
+colnames(data)[5] <- "MR Egger P-Value"
+colnames(data)[7] <- "WM P-Value"
+colnames(data)[3] <- "OR"
+
 # Add heatmap for IVW P-values
 circos.heatmap(data[,2], col = col_pval, track.height = 0.05)
 circos.track(track.index = get.current.track.index(), panel.fun = function(x, y) {
   if(CELL_META$sector.numeric.index == 1) {
     cn <- colnames(data)[2]
-    circos.text(CELL_META$cell.xlim[2] + convert_x(2, "mm"), CELL_META$ycenter, cn, cex = 0.5, adj = c(0,0.5), facing = "inside")
+    circos.text(CELL_META$cell.xlim[2] + convert_x(2, "mm"), CELL_META$ycenter, cn, cex = 0.75, adj = c(0,0.5), facing = "inside")
   }
 }, bg.border = NA)
 
 # Draw metabolite labels
-draw_metabolite_labels(data, cex = 1, extra_mm = 4)
+draw_metabolite_labels(data, cex = 0.8, extra_mm = 4)
 
 # Add MR-Egger P-value heatmap
 circos.heatmap(data[,5], col = col_pval, bg.border = "black", bg.lwd = 1, bg.lty = 1, track.height = 0.05)
 circos.track(track.index = get.current.track.index(), panel.fun = function(x, y) {
   if(CELL_META$sector.numeric.index == 1) {
     cn <- colnames(data)[5]
-    circos.text(CELL_META$cell.xlim[2] + convert_x(2, "mm"), CELL_META$ycenter, cn, cex = 0.5, adj = c(0,0.5), facing = "inside")
+    circos.text(CELL_META$cell.xlim[2] + convert_x(2, "mm"), CELL_META$ycenter, cn, cex = 0.75, adj = c(0,0.5), facing = "inside")
   }
 }, bg.border = NA)
 
@@ -122,7 +127,7 @@ circos.heatmap(data[,7], col = col_pval, bg.border = "black", bg.lwd = 1, bg.lty
 circos.track(track.index = get.current.track.index(), panel.fun = function(x, y) {
   if(CELL_META$sector.numeric.index == 1) {
     cn <- colnames(data)[7]
-    circos.text(CELL_META$cell.xlim[2] + convert_x(2, "mm"), CELL_META$ycenter, cn, cex = 0.5, adj = c(0,0.5), facing = "inside")
+    circos.text(CELL_META$cell.xlim[2] + convert_x(2, "mm"), CELL_META$ycenter, cn, cex = 0.75, adj = c(0,0.5), facing = "inside")
   }
 }, bg.border = NA)
 
@@ -137,7 +142,7 @@ circos.track(ylim = range(row_or), panel.fun = function(x, y) {
 circos.track(track.index = get.current.track.index(), panel.fun = function(x, y) {
   if(CELL_META$sector.numeric.index == 1) {
     cn <- colnames(data)[3]
-    circos.text(CELL_META$cell.xlim[2] + convert_x(2, "mm"), CELL_META$ycenter, cn, cex = 0.5, adj = c(0,0.5), facing = "inside")
+    circos.text(CELL_META$cell.xlim[2] + convert_x(2, "mm"), CELL_META$ycenter, cn, cex = 0.75, adj = c(0,0.5), facing = "inside")
   }
 }, bg.border = NA)
 circos.yaxis(side = "left", labels.cex = 0.5, at = c(0.8, 1, 1.3))
@@ -155,4 +160,3 @@ grid.draw(all)
 
 # Close PDF
 dev.off()
-     
